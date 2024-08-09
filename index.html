@@ -7,27 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Weather App</h1>
-    <label for=""> Address: 
+    <div id="clock"></div>
+    <div class="border">
+        <h2 id="address"></h2>
+    </div>
+    <div id="date"></div>
+    <header id="padd">
+        <div id="temperature"></div>
+        <div id="weather"></div>
+    </div>
+    <figure id="border"></figure>
+    <main class="grid">
+        <div class="box">
+                <p id="wind"></p>
+        </div>
+</main>
+    <div id="box">
         <input type="text" name="" id="txt" placeholder="Address...">
         <button id="but">Get Weather Data</button>
-    </label>
-
-    <div class="section" id="addr">
-            <h2>Address </h2>
-            <p id="address"></p>
-    </div>
-    <div class="section" id="weat">
-            <h2>Weather </h2>
-            <p id="weather"></p>
-    </div>
-    <div class="section" id="temp">
-            <h2>Temperature </h2>
-            <p id="temperature"></p>
-    </div>
-    <div class="section" id="wind">
-            <h2>Wind Speed </h2>
-            <p id="Wind"></p>
     </div>
 
     <script src="logic.js"></script>

@@ -12,69 +12,7 @@ async function fillTxt() {
     document.getElementById("address").innerHTML=weatherInfo.address;
     document.getElementById("weather").innerHTML=weatherInfo.weather;
     document.getElementById("temperature").innerHTML=weatherInfo.temperature;
-    document.getElementById("Wind").innerHTML=weatherInfo.windSpeed;
-}
-async function fillBackGround() {
-    fill1();
-    fill2();
-    fill3();
-    fill4();
-}
-
-
-async function fill1() {
-    const img = document.getElementById("addr");
-    const place =  weatherInfo.timezone;
-    const url = `https://api.giphy.com/v1/stickers/translate?api_key=5fIuXO50TKGM7tu3jM79RDpaH4PxvLAE&s=${place}`;
-    const response = await fetch(url,{
-        mode:"cors"
-    });
-    const data = await response.json();
-    console.log(data);
-    img.style.backgroundImage=`url(${data.data.images.original.url})`;
-    img.style.backgroundSize = 'contain';
-}
-
-
-async function fill2() {
-    const img = document.getElementById("weat");
-    const place =  weatherInfo.weather;
-    const url = `https://api.giphy.com/v1/stickers/translate?api_key=5fIuXO50TKGM7tu3jM79RDpaH4PxvLAE&s=${place}`;
-    const response = await fetch(url,{
-        mode:"cors"
-    });
-    const data = await response.json();
-    console.log(data);
-    img.style.backgroundImage=`url(${data.data.images.original.url})`;
-    img.style.backgroundSize = 'contain';
-}
-
-
-async function fill3() {
-    const img = document.getElementById("temp");
-    const place =  "thermometer";
-    const url = `https://api.giphy.com/v1/stickers/translate?api_key=5fIuXO50TKGM7tu3jM79RDpaH4PxvLAE&s=${place}`;
-    const response = await fetch(url,{
-        mode:"cors"
-    });
-    const data = await response.json();
-    console.log(data);
-    img.style.backgroundImage=`url(${data.data.images.original.url})`;
-    img.style.backgroundSize = 'contain';
-}
-
-
-async function fill4() {
-    const img = document.getElementById("wind");
-    const place =  weatherInfo.windSpeed;
-    const url = `https://api.giphy.com/v1/stickers/translate?api_key=5fIuXO50TKGM7tu3jM79RDpaH4PxvLAE&s=${place}`;
-    const response = await fetch(url,{
-        mode:"cors"
-    });
-    const data = await response.json();
-    console.log(data);
-    img.style.backgroundImage=`url(${data.data.images.original.url})`;
-    img.style.backgroundSize = 'contain';
+    document.getElementById("wind").innerHTML=weatherInfo.windSpeed;
 }
 
 
@@ -96,6 +34,26 @@ async function getAdd(){
     console.log(weatherInfo);
     
     fillTxt();
-    fillBackGround();
-
 }
+
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const timeString = `${hours}:${minutes}`;
+    document.getElementById('clock').textContent = timeString;
+}
+
+// Update the time immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+
+function updateDate() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString(undefined, options);
+    document.getElementById('date').textContent = dateString;
+}
+
+// Call the function to update the date
+updateDate();

@@ -1,9 +1,17 @@
 body{
-    padding: 30px;
-    font-size:20px;
+    padding: 30px 30px 50px 30px;
+    font-size:25px;
+    color: white;
+    background-color: grey;
 }
-div{
-    background-color: aliceblue;
+
+input, button{
+    font-size: 30px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: max-content max-content;
 }
 .section{
     width: 90%;
@@ -13,14 +21,57 @@ div{
     border: 3px solid red;
     padding: 0;
 }
-p{
-    margin: 0 auto 0 auto;
-    background-color: aliceblue;
-    width: max-content;
-}
+
 h2{
-    margin: 2px auto 0 auto;
     width: max-content;
     padding: 0;
-    background-color: aliceblue;
+}
+.border{
+    border-bottom: 2px solid white;
+    width: max-content;
+    margin-bottom: 10px;
+}
+#clock{
+    font-size: 34px;
+    height: 40px;
+    text-align: center;
+    width: 100px;
+    border-radius: 15px;
+}
+div:hover{
+    border: 5px solid salmon;
+    cursor: pointer;
+}
+#box{
+    position: fixed;
+    left: 50%;        /* Move the element horizontally to the center of the screen */
+    bottom: 5px;     /* Position it at the bottom with a 20px margin */
+    transform: translateX(-50%); /* Offset by 50% of the element's width to truly center it */
+    margin: 0 auto;   /* Optional: ensure the auto margin doesn't interfere */
+}
+#address{
+    padding: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: left;
+}
+#padd{
+    padding-left: 30px;
+}
+#weather{
+    width: 200px;
+    margin-top: 10px;
+}
+#date{
+    margin-bottom: 20px;
+}
+#temperature,#weather{
+    font-size: 50px;
+    font-weight: 900;
+}
+#border{
+    width: 99%;
+    margin: 10px auto 10px auto;
+    background-color: white;
+    height: 5px;
 }
