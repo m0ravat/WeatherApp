@@ -1,0 +1,26 @@
+body{
+    padding: 30px;
+    font-size:20px;
+}
+div{
+    background-color: aliceblue;
+}
+.section{
+    width: 90%;
+    height: 300px;
+    text-align: center;
+    margin: 10px auto 0px auto;
+    border: 3px solid red;
+    padding: 0;
+}
+p{
+    margin: 0 auto 0 auto;
+    background-color: aliceblue;
+    width: max-content;
+}
+h2{
+    margin: 2px auto 0 auto;
+    width: max-content;
+    padding: 0;
+    background-color: aliceblue;
+}
