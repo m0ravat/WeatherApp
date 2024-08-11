@@ -3,7 +3,10 @@ const weatherInfo = {
     weather: "Unknown",
     temperature: "N/A",
     windSpeed: "N/A",
-    timezone: "N/A"
+    timezone: "N/A",
+    humidity: "N/A",
+    pressure: "N/A",
+    windDirection:"N/a"
 };
 
 document.getElementById("but").addEventListener('click',getAdd);
@@ -13,6 +16,10 @@ async function fillTxt() {
     document.getElementById("weather").innerHTML=weatherInfo.weather;
     document.getElementById("temperature").innerHTML=weatherInfo.temperature;
     document.getElementById("wind").innerHTML=weatherInfo.windSpeed;
+    document.getElementById("humidity").innerHTML=weatherInfo.windSpeed;
+    document.getElementById("pressure").innerHTML=weatherInfo.windSpeed;
+    document.getElementById("direction").innerHTML=weatherInfo.windDirection;
+
 }
 
 
@@ -26,9 +33,35 @@ async function getAdd(){
         }
     });
     const data = await response.json();
+    console.log(data);
     weatherInfo.address = data.resolvedAddress;
     weatherInfo.weather = data.currentConditions.conditions;
     weatherInfo.temperature = `${data.currentConditions.temp} °C`;
+    weatherInfo.humidity=`${data.currentConditions.humidity} %`;
+    weatherInfo.pressure=`${data.currentConditions.pressure} hpa`;
+    weatherInfo.windDirection = `${data.currentConditions.winddir} °`;
+
+    if(data.currentConditions.temp >=20 && data.currentConditions.temp<=25){
+        document.getElementById("screen").style.backgroundColor="#db5050";
+        console.log("1");
+
+    }
+    else if(data.currentConditions.temp >25){
+        document.getElementById("screen").style.backgroundColor="red";
+        console.log("2");
+
+    }
+    else if(data.currentConditions.temp >=10 && data.currentConditions.temp<20){
+        document.getElementById("screen").style.backgroundColor="#52c5ef";
+        console.log("3");
+
+    }
+    else if(data.currentConditions.temp <10){
+        document.getElementById("screen").style.backgroundColor="#063b4f";
+        console.log("4");
+
+    }
+
     weatherInfo.windSpeed = `${data.currentConditions.windspeed} km/h`;
     weatherInfo.timezone = `${data.timezone}`;
     console.log(weatherInfo);

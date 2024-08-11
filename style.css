@@ -1,26 +1,47 @@
 body{
-    padding: 30px 30px 50px 30px;
-    font-size:25px;
+    padding-top: 30px;
+    font-size: calc(17px + 0.390625vw);
     color: white;
     background-color: grey;
 }
-
-input, button{
-    font-size: 30px;
+.box{
+    text-align: center;
 }
+div#screen{
+    margin: auto;
+    width:390px;
+    border: 2px solid red;
+    padding: 5px;
+}
+@media screen and (max-width:430px) {
+    body{
+        padding: 0;
+    }
+    div#screen{
+        margin: 0;
+    }
+}
+input, button{
+    font-size: calc(16px + 0.390625vw);
+}
+
 .grid{
     display: grid;
     grid-template-columns: max-content max-content;
     grid-template-rows: max-content max-content;
+    column-gap: 10px;
+    row-gap: 10px;
 }
-.section{
-    width: 90%;
-    height: 300px;
-    text-align: center;
-    margin: 10px auto 0px auto;
-    border: 3px solid red;
-    padding: 0;
+.title{
+    background-color: rgb(11, 87, 90);
+    padding: 7px;
+
+    border-radius: 15px;
 }
+div{
+    max-width: 290px;
+}
+
 
 h2{
     width: max-content;
@@ -28,35 +49,34 @@ h2{
 }
 .border{
     border-bottom: 2px solid white;
-    width: max-content;
     margin-bottom: 10px;
+    max-width: fit-content;
 }
 #clock{
-    font-size: 34px;
+    font-size: calc(25px + 0.390625vw);
     height: 40px;
-    text-align: center;
-    width: 100px;
-    border-radius: 15px;
+    text-align: left;
 }
-div:hover{
-    border: 5px solid salmon;
-    cursor: pointer;
-}
+
 #box{
     position: fixed;
     left: 50%;        /* Move the element horizontally to the center of the screen */
     bottom: 5px;     /* Position it at the bottom with a 20px margin */
     transform: translateX(-50%); /* Offset by 50% of the element's width to truly center it */
     margin: 0 auto;   /* Optional: ensure the auto margin doesn't interfere */
+    display: flex;
+    flex-wrap: nowrap;
+    
 }
 #address{
     padding: 5px;
     margin-top: 0;
     margin-bottom: 5px;
     text-align: left;
+    font-size: calc(8px + 0.390625vw);
 }
 #padd{
-    padding-left: 30px;
+    padding-left: 10px;
 }
 #weather{
     width: 200px;
@@ -66,12 +86,15 @@ div:hover{
     margin-bottom: 20px;
 }
 #temperature,#weather{
-    font-size: 50px;
+    font-size: calc(30px + 0.390625vw);
     font-weight: 900;
 }
 #border{
     width: 99%;
     margin: 10px auto 10px auto;
-    background-color: white;
+    background-color: #ffffff;
     height: 5px;
+}
+button{
+    width: 250px;
 }
