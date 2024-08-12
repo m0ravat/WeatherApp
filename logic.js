@@ -21,7 +21,13 @@ async function fillTxt() {
     document.getElementById("direction").innerHTML=weatherInfo.windDirection;
 
 }
-
+document.getElementById("picture").addEventListener('click', async function(){
+    const img = document.getElementById("picture");
+    const response = await fetch("https://api.giphy.com/v1/gifs/translate?api_key=5fIuXO50TKGM7tu3jM79RDpaH4PxvLAE&s=weather", {mode:"cors"});
+    const pic = await response.json();
+    img.style.backgroundImage=`url(${pic.data.images.original.url})`;
+    console.log("1");
+});
 
 async function getAdd(){
     const add = document.getElementById("txt");
