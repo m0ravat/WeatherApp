@@ -24,7 +24,7 @@ div#screen{
 }
 input, button{
     font-size: calc(16px + 0.390625vw);
-    width: 150px;
+    width: 100px;
 }
 
 .grid{
