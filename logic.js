@@ -16,8 +16,8 @@ async function fillTxt() {
     document.getElementById("weather").innerHTML=weatherInfo.weather;
     document.getElementById("temperature").innerHTML=weatherInfo.temperature;
     document.getElementById("wind").innerHTML=weatherInfo.windSpeed;
-    document.getElementById("humidity").innerHTML=weatherInfo.windSpeed;
-    document.getElementById("pressure").innerHTML=weatherInfo.windSpeed;
+    document.getElementById("humidity").innerHTML=weatherInfo.humidity;
+    document.getElementById("pressure").innerHTML=weatherInfo.pressure;
     document.getElementById("direction").innerHTML=weatherInfo.windDirection;
 
 }
